@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+     <section>
+        <div class="">
+            <div class="row">
+            <div class="col-md-5">
+                <h2>My Account</h2>
+                <p>Thank you for visiting the [name of system] diagnosis system! As you explore the site, you can complete the fields in the form on the right of this page to get your image diagnosed!</p>
+            	<!--<figure><img src='{{ static_url("images/doctor.png") }}' alt="image" title="Doctor" class="img-responsive lady1"></figure>-->
+            </div>
+            <div class="col-md-7">
+                <h1 class="m-b-20">Thank you</h1>
+                <div class="appointment-form clearfix">
+                    {% if len(message) > 1 %}
+                    <div class="message alert alert-success">
+                       {{ message }}
+                   </div>
+                    {% end %}
+                <a href="/single_image" class="btn btn-default btn-blue">View Report</a></td>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </section>
+{% end %}

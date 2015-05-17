@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+     <section>
+        <div class="">
+            <div class="row">
+                <div class="col-md-5">
+                        <!--<figure><img src='{{ static_url("images/doctor.png") }}' alt="image" title="Doctor" class="img-responsive"></figure>-->
+                        <h2 class="alert alert-success">{{ message }}</h2>
+                    {% if image_classification == 1 %}
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      prescription
+                    </button>
+                    <div class="collapse" id="collapseExample">
+                      <div class="">
+                        <ul class="list-group">
+                          <li class="list-group-item">visit a doctor</li>
+                          <li class="list-group-item">do not touch the infected psrt</li>
+                          <li class="list-group-item">keep away from the sun</li>
+                        </ul>
+                      </div>
+                    </div>
+                    {% end %}
+                    <p>Let's hope that you had a wonderful experience using [name of system]
+                         image diagnosis system! We meet next time!</p>
+                </div>
+                <div class="col-md-7">
+                    <div class="diagnose m-b-20">
+                        <div class="col-md-6">
+                           <div class="row m-b-20">
+                               <img width="200" height="200" src="/skinImages/{{ imageInfo.skinImageId }}/{{ imageInfo.skinImageName }}"/>
+                               <label style="width:100%; margin-top:10px;">Diagnosed Image:</label>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="row m-b-20">
+                                <label style="width:100%">Patient Age:</label> {{ imageInfo.patientAge }}
+                           </div>
+                           <div class="row m-b-20" >
+                                <label style="width:100%">Patient Location</label> {{ imageInfo.patientLocation }}
+                           </div>
+                           <div class="row">
+                                <label style="width:100%">Condition Description:</label> {{ imageInfo.skinConditionDescription }}
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% end %}
+
